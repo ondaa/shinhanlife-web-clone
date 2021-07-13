@@ -1,0 +1,12 @@
+{
+  "name": "sinhan-web-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "4.12.0"
+  },
+  "scripts": {
+    "start:style": "node-sass -w scss/ -o css/"
+  }
+}
