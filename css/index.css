@@ -1,2 +1,172 @@
+@charset "UTF-8";
 * {
-  padding: 0; }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif; }
+
+ul,
+li {
+  list-style: none; }
+
+section {
+  width: 100%; }
+
+input,
+textarea,
+button {
+  outline: none;
+  border-radius: 0;
+  border: none; }
+
+.gnbWrap,
+.topWrap,
+.contentWrap {
+  max-width: 1136px;
+  min-width: 1136px;
+  margin: 0 auto; }
+
+.container {
+  width: 100%;
+  height: auto; }
+
+.blind {
+  display: none; }
+
+[class*="iconButton"] {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: none;
+  box-shadow: none; }
+
+.iconButton {
+  cursor: pointer; }
+  .iconButton:hover span {
+    width: 28px; }
+    .iconButton:hover span .midLine {
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .iconButton span {
+    display: inline-block;
+    position: absolute;
+    width: 22px;
+    height: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s; }
+    .iconButton span:after {
+      content: "";
+      top: 0; }
+    .iconButton span:before {
+      content: "";
+      bottom: 0; }
+    .iconButton span .midLine {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      background-color: white;
+      height: 2px;
+      width: 1.6rem;
+      transition: all 0.2s; }
+    .iconButton span:after, .iconButton span:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: white; }
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9; }
+  header nav.topWrap {
+    text-align: right;
+    height: 40px;
+    padding-top: 12px; }
+    header nav.topWrap .linkGroup {
+      display: inline-block; }
+      header nav.topWrap .linkGroup a {
+        position: relative;
+        display: inline-block;
+        font-size: 1.3rem;
+        padding-left: 16px;
+        color: white; }
+        header nav.topWrap .linkGroup a:not(:last-child) {
+          padding-right: 16px; }
+        header nav.topWrap .linkGroup a + a:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          height: 100%;
+          border-right: 1px solid #dddddd; }
+  header header.sticky {
+    background-color: #ffffff; }
+  header .gnbArea {
+    height: 76px; }
+    header .gnbArea nav.gnbWrap {
+      height: inherit;
+      width: 100%; }
+      header .gnbArea nav.gnbWrap .gnbWrap_cover {
+        height: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+      header .gnbArea nav.gnbWrap .navLinkGroup {
+        display: flex;
+        color: white;
+        font-size: 1.9rem;
+        font-weight: bold;
+        height: inherit;
+        line-height: 76px; }
+        header .gnbArea nav.gnbWrap .navLinkGroup li {
+          padding: 0 20px;
+          height: inherit; }
+    header .gnbArea .logoWrap {
+      width: 172px; }
+    header .gnbArea .shinhanLifeLogo {
+      width: 172px;
+      height: 30px;
+      display: inline-block;
+      background-image: url("../resources/images/logo_shinhan_lift.svg");
+      background-position: 0 center;
+      background-repeat: no-repeat;
+      background-size: 172px auto; }
+
+.mainSection {
+  background-color: #715deb;
+  margin-bottom: 40px; }
+  .mainSection .mainVisual {
+    position: relative; }
+    .mainSection .mainVisual .background {
+      min-height: 820px; }
+    .mainSection .mainVisual .inputArea {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 465px; }
+      .mainSection .mainVisual .inputArea .inputWrap {
+        position: relative; }
+        .mainSection .mainVisual .inputArea .inputWrap input {
+          height: 60px;
+          border: 3px solid white;
+          width: 100%;
+          border-radius: 0;
+          background-color: rgba(0, 0, 0, 0.1);
+          color: white;
+          padding: 0 60px 0 16px;
+          font-size: 1.8rem; }
+          .mainSection .mainVisual .inputArea .inputWrap input::placeholder {
+            color: #ffffff; }

@@ -1,0 +1,7 @@
+$max-width: 1136px;
+
+@mixin contentWidth {
+  max-width: $max-width;
+  min-width: $max-width;
+  margin: 0 auto;
+}
