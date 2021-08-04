@@ -2,8 +2,9 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 9;
+  right: 0;
+  transition: background-color 0.3s;
+  z-index: 901;
 
   nav.topWrap {
     text-align: right;
@@ -16,27 +17,32 @@ header {
       a {
         position: relative;
         display: inline-block;
-        font-size: 1.3rem;
-        padding-left: 16px;
+        font-size: 1.2rem;
         color: white;
-
-        &:not(:last-child) {
-          padding-right: 16px;
-        }
+        margin: 3px 15px;
 
         & + a:before {
           content: "";
           position: absolute;
-          left: 0;
-          height: 100%;
+          top: 50%;
+          left: -16px;
+          transform: translateY(-50%);
+          height: 12px;
           border-right: 1px solid $gray1;
         }
       }
     }
   }
 
-  header.sticky {
-    background-color: #ffffff;
+  &.sticky {
+    position: fixed;
+    background-color: white;
+    top: -40px;
+
+    .gnbArea nav.gnbWrap .navLinkGroup li {
+      color: $black2;
+      opacity: 0.5;
+    }
   }
 
   .gnbArea {
@@ -61,6 +67,7 @@ header {
         font-weight: bold;
         height: inherit;
         line-height: 76px;
+        letter-spacing: -0.6px;
 
         li {
           padding: 0 20px;

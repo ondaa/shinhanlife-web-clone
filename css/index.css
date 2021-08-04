@@ -4,9 +4,17 @@
   margin: 0;
   box-sizing: border-box; }
 
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
 html {
   font-size: 10px;
-  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif; }
+  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif; }
+
+body {
+  min-height: 100%; }
 
 ul,
 li {
@@ -30,8 +38,8 @@ button {
   margin: 0 auto; }
 
 .container {
-  width: 100%;
-  height: auto; }
+  position: relative;
+  width: 100%; }
 
 .blind {
   display: none; }
@@ -89,8 +97,9 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 9; }
+  right: 0;
+  transition: background-color 0.3s;
+  z-index: 901; }
   header nav.topWrap {
     text-align: right;
     height: 40px;
@@ -100,19 +109,24 @@ header {
       header nav.topWrap .linkGroup a {
         position: relative;
         display: inline-block;
-        font-size: 1.3rem;
-        padding-left: 16px;
-        color: white; }
-        header nav.topWrap .linkGroup a:not(:last-child) {
-          padding-right: 16px; }
+        font-size: 1.2rem;
+        color: white;
+        margin: 3px 15px; }
         header nav.topWrap .linkGroup a + a:before {
           content: "";
           position: absolute;
-          left: 0;
-          height: 100%;
+          top: 50%;
+          left: -16px;
+          transform: translateY(-50%);
+          height: 12px;
           border-right: 1px solid #dddddd; }
-  header header.sticky {
-    background-color: #ffffff; }
+  header.sticky {
+    position: fixed;
+    background-color: white;
+    top: -40px; }
+    header.sticky .gnbArea nav.gnbWrap .navLinkGroup li {
+      color: #222222;
+      opacity: 0.5; }
   header .gnbArea {
     height: 76px; }
     header .gnbArea nav.gnbWrap {
@@ -130,7 +144,8 @@ header {
         font-size: 1.9rem;
         font-weight: bold;
         height: inherit;
-        line-height: 76px; }
+        line-height: 76px;
+        letter-spacing: -0.6px; }
         header .gnbArea nav.gnbWrap .navLinkGroup li {
           padding: 0 20px;
           height: inherit; }

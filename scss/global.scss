@@ -4,10 +4,20 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 html {
   font-size: 10px;
   font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", "gulim", "굴림",
     Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100%;
 }
 
 ul,
@@ -34,8 +44,8 @@ button {
 }
 
 .container {
+  position: relative;
   width: 100%;
-  height: auto;
 }
 
 .blind {
