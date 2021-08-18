@@ -34,25 +34,15 @@ header {
     }
   }
 
-  &.sticky {
-    position: fixed;
-    background-color: white;
-    top: -40px;
-
-    .gnbArea nav.gnbWrap .navLinkGroup li {
-      color: $black2;
-      opacity: 0.5;
-    }
-  }
-
   .gnbArea {
+    position: relative;
     height: 76px;
 
     nav.gnbWrap {
       height: inherit;
       width: 100%;
 
-      .gnbWrap_cover {
+      .gnbWrapCover {
         height: inherit;
         display: flex;
         justify-content: space-between;
@@ -62,16 +52,93 @@ header {
 
       .navLinkGroup {
         display: flex;
-        color: white;
         font-size: 1.9rem;
         font-weight: bold;
         height: inherit;
-        line-height: 76px;
         letter-spacing: -0.6px;
 
-        li {
+        & > li {
           padding: 0 20px;
           height: inherit;
+
+          & > a {
+            display: inline-block;
+            color: white;
+            transition: all 0.3s;
+            padding-top: 22px;
+          }
+
+          &.on .subArea {
+            display: block;
+
+            a {
+              color: $black2;
+            }
+          }
+        }
+
+        .subArea {
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: 100%;
+          min-height: 100px;
+          overflow: hidden;
+          background-color: white;
+          padding-bottom: 50px;
+          display: none;
+
+          .subWrap {
+            max-width: $max-width;
+            margin: 0 auto;
+          }
+
+          a {
+            transition: color 0.25s;
+          }
+
+          a:hover {
+            color: $blue1 !important;
+          }
+
+          .depth2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            & > li {
+              margin-top: 40px;
+              width: 20%;
+              padding: 0 30px 0 16px;
+
+              & > a {
+                font-size: 1.6rem;
+                color: $black2;
+                font-weight: 600;
+              }
+            }
+          }
+
+          .depth3 {
+            & > li > a {
+              font-size: 1.4rem;
+              color: $gray3;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .menuSlider {
+          position: absolute;
+          background-color: $purple1;
+          height: 3px;
+          width: 0;
+          bottom: 15px;
+          left: 0;
+          transition: all 0.3s 0.1s;
+          pointer-events: none;
+          transform: translateX(50%);
+          opacity: 0;
         }
       }
     }
@@ -88,6 +155,50 @@ header {
       background-position: 0 center;
       background-repeat: no-repeat;
       background-size: 172px auto;
+    }
+  }
+
+  // sticky 와 menuOpen 부분
+  &.sticky {
+    position: fixed;
+    top: -40px;
+  }
+
+  &.sticky,
+  &.menuOpen {
+    background-color: white;
+
+    nav.topWrap .linkGroup a {
+      color: $gray3;
+    }
+
+    .gnbArea nav.gnbWrap .navLinkGroup {
+      .menuSlider {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      li {
+        a {
+          color: $black2;
+          opacity: 0.5;
+        }
+
+        &.on a {
+          opacity: 1;
+        }
+      }
+    }
+
+    .gnbArea .shinhanLifeLogo {
+      background-image: url("../resources/images/logo_sh.svg");
+    }
+
+    .iconButton {
+      span:before,
+      span:after {
+        background-color: $black2;
+      }
     }
   }
 }

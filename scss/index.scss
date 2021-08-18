@@ -5,7 +5,8 @@
 @import "./header.scss";
 
 .mainSection {
-  background-color: $purple1;
+  position: relative;
+  background-color: $purple2;
   margin-bottom: 40px;
 
   .mainVisual {
@@ -17,12 +18,13 @@
 
     .inputArea {
       position: absolute;
-      bottom: 0;
+      bottom: 50px;
       left: 0;
       width: 465px;
 
       .inputWrap {
         position: relative;
+        padding-bottom: 5px;
 
         input {
           height: 60px;
@@ -31,14 +33,146 @@
           border-radius: 0;
           background-color: rgba(0, 0, 0, 0.1);
           color: white;
-          padding: 0 60px 0 16px;
+          padding: 0 50px 0 16px;
           font-size: 1.8rem;
 
           &::placeholder {
             color: #ffffff;
           }
         }
+
+        .searchButton {
+          cursor: pointer;
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          right: 0;
+          background: url("../resources/images/ico_gnb_srch_w.svg") no-repeat
+            center;
+        }
+      }
+
+      .hashtag {
+        font-size: 1.3rem;
+        padding-top: 0.7rem;
+
+        a {
+          display: inline-block;
+          padding: 2px;
+          color: $description;
+
+          & + a {
+            margin-left: 11px;
+          }
+        }
       }
     }
   }
+
+  .columnSymbol {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: $purple1;
+      top: 0;
+    }
+
+    &:after {
+      right: 0;
+      width: 64px;
+      height: 260px;
+    }
+
+    &:before {
+      right: 64px;
+      width: 196px;
+      height: 64px;
+    }
+  }
+}
+
+.siberSection {
+  margin-top: 40px;
+  padding-bottom: 50px;
+
+  .siberArea {
+    display: flex;
+
+    & > div {
+      flex: 1;
+      height: 200px;
+      padding: 30px 70px 0 40px;
+
+      &.shinhanSiber {
+        background-color: #908ca5;
+      }
+
+      &.orangeSiber {
+        background-color: #978f8c;
+        margin-left: 1px;
+      }
+
+      .tit {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 12px;
+      }
+
+      div.tit {
+        font-size: 1.8rem;
+        color: $purple3;
+      }
+
+      &.newClient {
+        margin-left: 10px;
+        background: #f5f8ff
+          url("https://www.shinhanlife.co.kr/resources/images/cdh/main/new_member_bg.png")
+          no-repeat right 30px top 30px;
+        background-size: cover;
+
+        p {
+          font-size: 1.4rem;
+          color: $gray3;
+          word-break: keep-all;
+        }
+
+        a {
+          display: inline-block;
+          margin: 2rem 0 0;
+          border-color: $purple1;
+          background-color: $purple1;
+          min-width: 64px;
+          min-height: 36px;
+          line-height: 26px;
+          padding: 0.4rem 1.5rem;
+          border-radius: 2px;
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .copy {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+}
+
+.bgColor {
+  background-color: #fafafa;
+}
+
+.funSection {
+  padding: 64px 0;
 }

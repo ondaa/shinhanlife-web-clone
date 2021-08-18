@@ -12,8 +12,7 @@ body {
 
 html {
   font-size: 10px;
-  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", "gulim", "굴림",
-    Helvetica, sans-serif;
+  font-family: Noto Sans, Roboto, sans-serif;
 }
 
 body {
@@ -37,8 +36,14 @@ button {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .gnbWrap,
 .topWrap,
+.funWrap,
+.siberWrap,
 .contentWrap {
   @include contentWidth;
 }
@@ -50,6 +55,27 @@ button {
 
 .blind {
   display: none;
+}
+
+[class*="lineSlider"] {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    width: 0;
+    bottom: 1px;
+    border-bottom: 1px solid white;
+    transition: all 0.15s;
+
+    &:hover {
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
 }
 
 [class*="iconButton"] {

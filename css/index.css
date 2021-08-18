@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -11,7 +10,7 @@ body {
 
 html {
   font-size: 10px;
-  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", "gulim", "굴림", Helvetica, sans-serif; }
+  font-family: Noto Sans, Roboto, sans-serif; }
 
 body {
   min-height: 100%; }
@@ -30,8 +29,13 @@ button {
   border-radius: 0;
   border: none; }
 
+a {
+  text-decoration: none; }
+
 .gnbWrap,
 .topWrap,
+.funWrap,
+.siberWrap,
 .contentWrap {
   max-width: 1136px;
   min-width: 1136px;
@@ -43,6 +47,22 @@ button {
 
 .blind {
   display: none; }
+
+[class*="lineSlider"] {
+  position: relative; }
+  [class*="lineSlider"]:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    width: 0;
+    bottom: 1px;
+    border-bottom: 1px solid white;
+    transition: all 0.15s; }
+    [class*="lineSlider"]:after:hover {
+      left: 0;
+      right: 0;
+      width: 100%; }
 
 [class*="iconButton"] {
   display: inline-block;
@@ -120,19 +140,13 @@ header {
           transform: translateY(-50%);
           height: 12px;
           border-right: 1px solid #dddddd; }
-  header.sticky {
-    position: fixed;
-    background-color: white;
-    top: -40px; }
-    header.sticky .gnbArea nav.gnbWrap .navLinkGroup li {
-      color: #222222;
-      opacity: 0.5; }
   header .gnbArea {
+    position: relative;
     height: 76px; }
     header .gnbArea nav.gnbWrap {
       height: inherit;
       width: 100%; }
-      header .gnbArea nav.gnbWrap .gnbWrap_cover {
+      header .gnbArea nav.gnbWrap .gnbWrapCover {
         height: inherit;
         display: flex;
         justify-content: space-between;
@@ -140,15 +154,66 @@ header {
         border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
       header .gnbArea nav.gnbWrap .navLinkGroup {
         display: flex;
-        color: white;
         font-size: 1.9rem;
         font-weight: bold;
         height: inherit;
-        line-height: 76px;
         letter-spacing: -0.6px; }
-        header .gnbArea nav.gnbWrap .navLinkGroup li {
+        header .gnbArea nav.gnbWrap .navLinkGroup > li {
           padding: 0 20px;
           height: inherit; }
+          header .gnbArea nav.gnbWrap .navLinkGroup > li > a {
+            display: inline-block;
+            color: white;
+            transition: all 0.3s;
+            padding-top: 22px; }
+          header .gnbArea nav.gnbWrap .navLinkGroup > li.on .subArea {
+            display: block; }
+            header .gnbArea nav.gnbWrap .navLinkGroup > li.on .subArea a {
+              color: #222222; }
+        header .gnbArea nav.gnbWrap .navLinkGroup .subArea {
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: 100%;
+          min-height: 100px;
+          overflow: hidden;
+          background-color: white;
+          padding-bottom: 50px;
+          display: none; }
+          header .gnbArea nav.gnbWrap .navLinkGroup .subArea .subWrap {
+            max-width: 1136px;
+            margin: 0 auto; }
+          header .gnbArea nav.gnbWrap .navLinkGroup .subArea a {
+            transition: color 0.25s; }
+          header .gnbArea nav.gnbWrap .navLinkGroup .subArea a:hover {
+            color: #445fe6 !important; }
+          header .gnbArea nav.gnbWrap .navLinkGroup .subArea .depth2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; }
+            header .gnbArea nav.gnbWrap .navLinkGroup .subArea .depth2 > li {
+              margin-top: 40px;
+              width: 20%;
+              padding: 0 30px 0 16px; }
+              header .gnbArea nav.gnbWrap .navLinkGroup .subArea .depth2 > li > a {
+                font-size: 1.6rem;
+                color: #222222;
+                font-weight: 600; }
+          header .gnbArea nav.gnbWrap .navLinkGroup .subArea .depth3 > li > a {
+            font-size: 1.4rem;
+            color: #666666;
+            font-weight: 500; }
+        header .gnbArea nav.gnbWrap .navLinkGroup .menuSlider {
+          position: absolute;
+          background-color: #715deb;
+          height: 3px;
+          width: 0;
+          bottom: 15px;
+          left: 0;
+          transition: all 0.3s 0.1s;
+          pointer-events: none;
+          transform: translateX(50%);
+          opacity: 0; }
     header .gnbArea .logoWrap {
       width: 172px; }
     header .gnbArea .shinhanLifeLogo {
@@ -159,9 +224,31 @@ header {
       background-position: 0 center;
       background-repeat: no-repeat;
       background-size: 172px auto; }
+  header.sticky {
+    position: fixed;
+    top: -40px; }
+  header.sticky, header.menuOpen {
+    background-color: white; }
+    header.sticky nav.topWrap .linkGroup a, header.menuOpen nav.topWrap .linkGroup a {
+      color: #666666; }
+    header.sticky .gnbArea nav.gnbWrap .navLinkGroup .menuSlider, header.menuOpen .gnbArea nav.gnbWrap .navLinkGroup .menuSlider {
+      opacity: 1;
+      transform: translateX(0); }
+    header.sticky .gnbArea nav.gnbWrap .navLinkGroup li a, header.menuOpen .gnbArea nav.gnbWrap .navLinkGroup li a {
+      color: #222222;
+      opacity: 0.5; }
+    header.sticky .gnbArea nav.gnbWrap .navLinkGroup li.on a, header.menuOpen .gnbArea nav.gnbWrap .navLinkGroup li.on a {
+      opacity: 1; }
+    header.sticky .gnbArea .shinhanLifeLogo, header.menuOpen .gnbArea .shinhanLifeLogo {
+      background-image: url("../resources/images/logo_sh.svg"); }
+    header.sticky .iconButton span:before,
+    header.sticky .iconButton span:after, header.menuOpen .iconButton span:before,
+    header.menuOpen .iconButton span:after {
+      background-color: #222222; }
 
 .mainSection {
-  background-color: #715deb;
+  position: relative;
+  background-color: #4c3bbb;
   margin-bottom: 40px; }
   .mainSection .mainVisual {
     position: relative; }
@@ -169,11 +256,12 @@ header {
       min-height: 820px; }
     .mainSection .mainVisual .inputArea {
       position: absolute;
-      bottom: 0;
+      bottom: 50px;
       left: 0;
       width: 465px; }
       .mainSection .mainVisual .inputArea .inputWrap {
-        position: relative; }
+        position: relative;
+        padding-bottom: 5px; }
         .mainSection .mainVisual .inputArea .inputWrap input {
           height: 60px;
           border: 3px solid white;
@@ -181,7 +269,96 @@ header {
           border-radius: 0;
           background-color: rgba(0, 0, 0, 0.1);
           color: white;
-          padding: 0 60px 0 16px;
+          padding: 0 50px 0 16px;
           font-size: 1.8rem; }
           .mainSection .mainVisual .inputArea .inputWrap input::placeholder {
             color: #ffffff; }
+        .mainSection .mainVisual .inputArea .inputWrap .searchButton {
+          cursor: pointer;
+          position: absolute;
+          width: 60px;
+          height: 60px;
+          right: 0;
+          background: url("../resources/images/ico_gnb_srch_w.svg") no-repeat center; }
+      .mainSection .mainVisual .inputArea .hashtag {
+        font-size: 1.3rem;
+        padding-top: 0.7rem; }
+        .mainSection .mainVisual .inputArea .hashtag a {
+          display: inline-block;
+          padding: 2px;
+          color: rgba(255, 255, 255, 0.7); }
+          .mainSection .mainVisual .inputArea .hashtag a + a {
+            margin-left: 11px; }
+  .mainSection .columnSymbol {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    z-index: 2;
+    right: 0;
+    bottom: 0; }
+    .mainSection .columnSymbol:after, .mainSection .columnSymbol:before {
+      content: "";
+      position: absolute;
+      background-color: #715deb;
+      top: 0; }
+    .mainSection .columnSymbol:after {
+      right: 0;
+      width: 64px;
+      height: 260px; }
+    .mainSection .columnSymbol:before {
+      right: 64px;
+      width: 196px;
+      height: 64px; }
+
+.siberSection {
+  margin-top: 40px;
+  padding-bottom: 50px; }
+  .siberSection .siberArea {
+    display: flex; }
+    .siberSection .siberArea > div {
+      flex: 1;
+      height: 200px;
+      padding: 30px 70px 0 40px; }
+      .siberSection .siberArea > div.shinhanSiber {
+        background-color: #908ca5; }
+      .siberSection .siberArea > div.orangeSiber {
+        background-color: #978f8c;
+        margin-left: 1px; }
+      .siberSection .siberArea > div .tit {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 12px; }
+      .siberSection .siberArea > div div.tit {
+        font-size: 1.8rem;
+        color: #5642bf; }
+      .siberSection .siberArea > div.newClient {
+        margin-left: 10px;
+        background: #f5f8ff url("https://www.shinhanlife.co.kr/resources/images/cdh/main/new_member_bg.png") no-repeat right 30px top 30px;
+        background-size: cover; }
+        .siberSection .siberArea > div.newClient p {
+          font-size: 1.4rem;
+          color: #666666;
+          word-break: keep-all; }
+        .siberSection .siberArea > div.newClient a {
+          display: inline-block;
+          margin: 2rem 0 0;
+          border-color: #715deb;
+          background-color: #715deb;
+          min-width: 64px;
+          min-height: 36px;
+          line-height: 26px;
+          padding: 0.4rem 1.5rem;
+          border-radius: 2px;
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: white; }
+  .siberSection .copy {
+    font-size: 1.4rem;
+    margin-top: 1rem; }
+
+.bgColor {
+  background-color: #fafafa; }
+
+.funSection {
+  padding: 64px 0; }
