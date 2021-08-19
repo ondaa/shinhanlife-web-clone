@@ -296,41 +296,41 @@ header {
     position: relative; }
     .mainSection .mainVisual .background {
       min-height: 820px; }
-    .mainSection .mainVisual .inputArea {
-      position: absolute;
-      bottom: 50px;
-      left: 0;
-      width: 465px; }
-      .mainSection .mainVisual .inputArea .inputWrap {
-        position: relative;
-        padding-bottom: 5px; }
-        .mainSection .mainVisual .inputArea .inputWrap input {
-          height: 60px;
-          border: 3px solid white;
-          width: 100%;
-          border-radius: 0;
-          background-color: rgba(0, 0, 0, 0.1);
-          color: white;
-          padding: 0 50px 0 16px;
-          font-size: 1.8rem; }
-          .mainSection .mainVisual .inputArea .inputWrap input::placeholder {
-            color: #ffffff; }
-        .mainSection .mainVisual .inputArea .inputWrap .searchButton {
-          cursor: pointer;
-          position: absolute;
-          width: 60px;
-          height: 60px;
-          right: 0;
-          background: url("https://www.shinhanlife.co.kr/resources/images/cdh/common/ico_gnb_srch_w.svg") no-repeat center; }
-      .mainSection .mainVisual .inputArea .hashtag {
-        font-size: 1.3rem;
-        padding-top: 0.7rem; }
-        .mainSection .mainVisual .inputArea .hashtag a {
-          display: inline-block;
-          padding: 2px;
-          color: rgba(255, 255, 255, 0.7); }
-          .mainSection .mainVisual .inputArea .hashtag a + a {
-            margin-left: 11px; }
+  .mainSection .inputArea {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 465px; }
+    .mainSection .inputArea .inputWrap {
+      position: relative;
+      padding-bottom: 5px; }
+      .mainSection .inputArea .inputWrap input {
+        height: 60px;
+        border: 3px solid white;
+        width: 100%;
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white;
+        padding: 0 50px 0 16px;
+        font-size: 1.8rem; }
+        .mainSection .inputArea .inputWrap input::placeholder {
+          color: #ffffff; }
+      .mainSection .inputArea .inputWrap .searchButton {
+        cursor: pointer;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        right: 0;
+        background: url("https://www.shinhanlife.co.kr/resources/images/cdh/common/ico_gnb_srch_w.svg") no-repeat center; }
+  .mainSection .hashtag {
+    font-size: 1.3rem;
+    padding-top: 0.7rem; }
+    .mainSection .hashtag a {
+      display: inline-block;
+      padding: 2px;
+      color: rgba(255, 255, 255, 0.7); }
+      .mainSection .hashtag a + a {
+        margin-left: 11px; }
   .mainSection .columnSymbol {
     position: absolute;
     width: 260px;
@@ -580,6 +580,20 @@ header {
     .notiSection .boxWrap p {
       font-size: 1.5rem;
       color: #666; }
+  .notiSection .introComp {
+    text-align: center;
+    margin: 5px; }
+    .notiSection .introComp a {
+      display: inline-block;
+      border-radius: 2px;
+      border: 1px solid white;
+      background-color: rgba(255, 255, 255, 0.24);
+      font-size: 1.6rem;
+      color: white;
+      width: 176px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center; }
 
 footer {
   position: relative;
@@ -587,7 +601,16 @@ footer {
   footer nav {
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
+    footer nav:before {
+      content: "";
+      height: 48px;
+      bottom: 0;
+      background-color: #f8f8f8;
+      left: 0;
+      right: 0;
+      position: absolute; }
   footer .sectionList {
     display: flex;
     border-left: 1px solid #eee; }
@@ -595,11 +618,11 @@ footer {
       position: relative;
       width: 25%;
       padding-bottom: 48px; }
-      footer .sectionList > li button {
+      footer .sectionList > li button.footNavOpen {
+        position: absolute;
         z-index: 2;
         cursor: pointer;
-        background-color: white;
-        position: absolute;
+        background-color: #f8f8f8;
         display: block;
         left: 0;
         bottom: 0;
@@ -609,7 +632,7 @@ footer {
         text-align: left;
         border: none;
         padding: 0 0 0 31px; }
-        footer .sectionList > li button:after {
+        footer .sectionList > li button.footNavOpen:after {
           content: "";
           position: absolute;
           bottom: 0;
@@ -617,9 +640,19 @@ footer {
           height: 700px;
           width: 1px;
           background-color: #eee; }
+        footer .sectionList > li button.footNavOpen:before {
+          content: "";
+          position: absolute;
+          right: 31px;
+          top: 50%;
+          width: 8px;
+          height: 8px;
+          transform: rotate(45deg) translateY(-50%);
+          border: 1px solid #666;
+          border-width: 1px 0 0 1px; }
     footer .sectionList .sectionItem {
       width: 100%;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       padding: 0 20px 0 30px;
       background-color: white;
       z-index: 1;

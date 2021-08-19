@@ -1,5 +1,7 @@
 $max-width: 1136px;
 
+$tablet-width: 768px;
+
 @mixin contentWidth {
   max-width: $max-width;
   min-width: $max-width;
