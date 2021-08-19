@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="./css/index.css" rel="stylesheet" type="text/css" />
     <link
       rel="shortcut icon"
@@ -255,6 +257,7 @@
           </nav>
         </div>
       </header>
+      <div class="dimmed"></div>
 
       <section class="mainSection">
         <div class="contentWrap mainVisual">
@@ -297,21 +300,419 @@
             </div>
           </div>
 
-          <p class="copy">
-            ※ 사이버창구가 통합 오픈되는 2022년 3월까지는 보험사를 선택하여
-            이용이 가능합니다.
-          </p>
+          <p class="copy">※ 사이버창구가 통합 오픈되는 2022년 3월까지는 보험사를 선택하여 이용이 가능합니다.</p>
         </div>
       </section>
 
       <section class="funSection bgColor">
         <div class="funWrap">
-          <div class="funArea"></div>
+          <div class="funArea">
+            <ul class="funCards">
+              <li class="funCard">
+                <div class="cardWrap">
+                  <div class="imageBox"></div>
+                  <span>보험</span>
+                  <p class="cardContent">신한라이프 대표상품 보험료 계산하기</p>
+                  <div class="cardLink">
+                    <span class="chevron">간편 보험료계산</span>
+                  </div>
+                </div>
+              </li>
+              <li class="funCard">
+                <div class="cardWrap">
+                  <div class="imageBox"></div>
+                  <span>가입상담</span>
+                  <p class="cardContent">신한라이프 FC와 상담해보세요!</p>
+                  <div class="cardLink">
+                    <span class="chevron">보험상담 신청하기</span>
+                  </div>
+                </div>
+              </li>
+              <li class="funCard">
+                <div class="cardWrap">
+                  <div class="imageBox"></div>
+                  <span>퇴직연금</span>
+                  <p class="cardContent">(무)개인형퇴직연금 자산관리 퇴직연금보험</p>
+                  <div class="cardLink">
+                    <span class="chevron">개인형퇴직연금(IRP)</span>
+                  </div>
+                </div>
+              </li>
+              <li class="funCard">
+                <div class="cardWrap">
+                  <div class="imageBox"></div>
+                  <span>금융</span>
+                  <p class="cardContent">긴급자금 필요할 땐 어디서나 쉽고 빠르게</p>
+                  <div class="cardLink">
+                    <span class="chevron">보험계약대출</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="newLife">
+              <div class="tit">
+                <h2>만나보세요!<br />당신의 새롭고도 <span>놀라운 라이프</span></h2>
+
+                <a href="#" class="newLifeBanner">
+                  <p>매일 업데이트 되는 오늘의 운세를 신한라이프에서 확인해보세요~!</p>
+                  <span class="chevron">운세/ 사주 바로가기</span>
+                </a>
+              </div>
+
+              <div class="mainEvent">
+                <a href="#">
+                  <div class="img"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiperBanner">
+          <a href="#">
+            <div class="img"></div>
+          </a>
         </div>
       </section>
 
-      <footer></footer>
+      <section class="notiSection">
+        <div class="notiWrap">
+          <div class="notiArea">
+            <h2 class="mainTit">항상 앞서가는, 그리고 기대를 뛰어 넘는 신한라이프</h2>
+
+            <div class="information swiper-container infoSwiper">
+              <ul classs="swiper-wrapper">
+                <li class="swiper-slide">
+                  <span class="tit">Since</span>
+                  <h3 class="num">1990</h3>
+                  <span class="subTit">신뢰와 안정의 신한라이프</span>
+                </li>
+
+                <li class="swiper-slide">
+                  <span class="tit">개인고객수</span>
+                  <h3 class="num">400만</h3>
+                  <span class="subTit">고객이 선택한 보험</span>
+                </li>
+
+                <li class="swiper-slide">
+                  <span class="tit">13년 연속</span>
+                  <h3 class="num">AAA</h3>
+                  <span class="subTit">보험금 지급능력평가</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <a href="#"> 회사소개 바로가기 </a>
+            </div>
+
+            <div class="boxWrap">
+              <div class="box">
+                <div class="boxInner">
+                  <div>
+                    <!-- play button -->
+                  </div>
+                  <div class="swiper-container alramSwiper">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <a href="#">
+                          <div class="tit">신한라이프를 사칭하는 문자 스미싱, 파밍 주의!</div>
+                          <p>
+                            신한라이프는 전화 또는 이메일 등으로 고객님의 금융정보를 요구하지 않습니다.<br /><br />고객센터
+                            1588-5580 금융감독원 1332 경찰청 112
+                          </p>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#">
+                          <div class="tit">장애인 보험가입차별 신고센터 안내</div>
+                          <p>
+                            보험계약을 청약하려고 하였으나, 청약 거절 등 부당한 차별을 받았을 경우 신고하여 주시기
+                            바랍니다.<br /><br />신한라이프 1588-5580 생명보험협회 02-2262-6600
+                          </p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="box">
+                <div class="boxInner pd">
+                  <div class="tit">공지사항</div>
+
+                  <div class="swiper-container notiSwiper">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <a href="#" class="notiLink">
+                          <div >2021 WM고객서비스 대행업체 선정</h3>
+                          <div class="day">2021.08.18</div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#" class="notiLink">
+                          <div>2021년 8월 DB사업그룹 해촉공지</h3>
+                          <div class="day">2021.08.04</div>
+                        </a>
+                      </li>
+                      <li class="swiper-slide">
+                        <a href="#" class="notiLink">
+                          <div>2021년8월 SOHO지점 해촉자 공지</h3>
+                          <div class="day">2021.08.02</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <nav >
+          <ul class="sectionList">
+            <li>
+              <button class="footNavOpen">개인정보 보호</button>
+              <ul class="sectionItem">
+                <li>
+                  <a href="#">
+                    개인정보처리방침
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    고객정보취급방침
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    신용정보활용체제
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    고객권리안내문
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    이용자유의사항
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    전자금융거래 10계명
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    영상정보처리기기 운영관리지침
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    개인정보동의안내
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    개인신용정보 이용ㆍ제공 조회
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    개인정보 열람
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    마케팅동의 철회
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button class="footNavOpen">약관/정책</BUtton>
+              <ul class="sectionItem">
+                <li>
+                  <a href="#">
+                    홈페이지 이용약관
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    디지털보험 이용약관
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    전자금융거래 이용약관
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    전자금융서비스 이용약관
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    신한라이프와 함께하는 오늘
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    신한라이프카드 이용약관
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button class="footNavOpen">조회/안내</BUtton>
+              <ul class="sectionItem">
+                <li>
+                  <a href="#">
+                    금융사기 관련 유의사항
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    상속인 금융거래 조회서비스
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    휴면보험금 조회서비스
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    유사금융식별요령
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <button class="footNavOpen">신고센터</BUtton>
+              <ul class="sectionItem">
+                <li>
+                  <a href="#">
+                    펀드판매관련불편신고센터
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    보험범죄신고센터
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    미승인 안내자료 신고센터
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    보험모집질서 위반신고
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    장애인보험가입차별 신고센터
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    대출모집 부당/과장광고 신고센터
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    서민금융1332
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="companyInfo">
+          <div class="infoArea">
+            <div>
+              <span class="footerLogo">
+                <img src="https://www.shinhanlife.co.kr/resources/images/cdh/common/footer_sh_logo.svg" alt="logo" >
+              </span>
+
+              <a href="#" class="bullet">
+                <span class="strong" >
+                  개인정보처리방침
+                </span>
+              </a>
+
+              <a  href="#" class="bullet">
+                <span>
+                  전자민원접수
+                </span>
+              </a>
+
+              <a href="#" class="bullet">
+                <span >
+                  마케팅동의
+                </span>
+              </a>
+
+              <a href="#" class="bullet">
+                <span >
+                  가입설계동의
+                </span>
+              </a>
+
+              <a href="#" class="bullet">
+                <span>
+                  금융소비자정보 포털 파인(FINE)
+                </span>
+              </a>
+            </div>
+
+            <div class="phoneArea">
+              <span>대표전화 0000-0000 (해외 00-0-0000-0000)</span>
+              <span>신용대출문의 0000-0000</span>
+              <span>아파트담보대출문의 02-000-0000</span>
+            </div>
+
+            <address>
+              <span>00000 서울특별시 그 어딘가</span>
+              <span>대표이사 홍길동</span>
+              <span>사업자등록번호 000-00-00000</span>
+            </address>
+
+            <div class="copyright">
+              <span>ⓒ 2021 Shinhan Life Insurance Co., Ltd.</span>
+            </div>
+
+          </div>
+          <div></div>
+        </div>
+      </footer>
     </div>
   </body>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="/script/index.js"></script>
+
+  <script>
+    var alramSwiper = new Swiper(".alramSwiper", {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+    });
+
+    var notiSwiper = new Swiper(".notiSwiper", {
+      loop: true,
+    });
+
+    var infoSwiper = new Swiper("", {});
+  </script>
 </html>

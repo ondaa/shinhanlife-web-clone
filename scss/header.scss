@@ -49,113 +49,117 @@ header {
         align-items: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       }
-
-      .navLinkGroup {
-        display: flex;
-        font-size: 1.9rem;
-        font-weight: bold;
-        height: inherit;
-        letter-spacing: -0.6px;
-
-        & > li {
-          padding: 0 20px;
-          height: inherit;
-
-          & > a {
-            display: inline-block;
-            color: white;
-            transition: all 0.3s;
-            padding-top: 22px;
-          }
-
-          &.on .subArea {
-            display: block;
-
-            a {
-              color: $black2;
-            }
-          }
-        }
-
-        .subArea {
-          position: absolute;
-          left: 0;
-          top: 100%;
-          width: 100%;
-          min-height: 100px;
-          overflow: hidden;
-          background-color: white;
-          padding-bottom: 50px;
-          display: none;
-
-          .subWrap {
-            max-width: $max-width;
-            margin: 0 auto;
-          }
-
-          a {
-            transition: color 0.25s;
-          }
-
-          a:hover {
-            color: $blue1 !important;
-          }
-
-          .depth2 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-
-            & > li {
-              margin-top: 40px;
-              width: 20%;
-              padding: 0 30px 0 16px;
-
-              & > a {
-                font-size: 1.6rem;
-                color: $black2;
-                font-weight: 600;
-              }
-            }
-          }
-
-          .depth3 {
-            & > li > a {
-              font-size: 1.4rem;
-              color: $gray3;
-              font-weight: 500;
-            }
-          }
-        }
-
-        .menuSlider {
-          position: absolute;
-          background-color: $purple1;
-          height: 3px;
-          width: 0;
-          bottom: 15px;
-          left: 0;
-          transition: all 0.3s 0.1s;
-          pointer-events: none;
-          transform: translateX(50%);
-          opacity: 0;
-        }
-      }
     }
 
     .logoWrap {
       width: 172px;
     }
+  }
 
-    .shinhanLifeLogo {
-      width: 172px;
-      height: 30px;
-      display: inline-block;
-      background-image: url("../resources/images/logo_shinhan_lift.svg");
-      background-position: 0 center;
-      background-repeat: no-repeat;
-      background-size: 172px auto;
+  .navLinkGroup {
+    display: flex;
+    font-size: 1.9rem;
+    font-weight: bold;
+    height: inherit;
+    letter-spacing: -0.6px;
+
+    & > li {
+      padding: 0 20px;
+      height: inherit;
+
+      & > a {
+        display: inline-block;
+        color: white;
+        transition: all 0.3s;
+        padding-top: 22px;
+      }
+
+      &.on .subArea {
+        display: block;
+
+        a {
+          color: $black2;
+        }
+      }
     }
+
+    .subArea {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      min-height: 100px;
+      overflow: hidden;
+      background-color: white;
+      padding-bottom: 50px;
+      display: none;
+      border-top: 1px solid $gray1;
+
+      .subWrap {
+        max-width: $max-width;
+        margin: 0 auto;
+      }
+
+      a {
+        transition: color 0.25s;
+      }
+
+      a:hover {
+        color: $blue1 !important;
+      }
+
+      .depth2 {
+        margin: 0 0 0 -16px;
+        font-size: 0;
+        line-height: 2;
+
+        & > li {
+          display: inline-block;
+          margin-top: 40px;
+          width: 20%;
+          padding: 0 30px 0 16px;
+          vertical-align: top;
+          text-align: left;
+
+          & > a {
+            font-size: 1.6rem;
+            color: $black2;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .depth3 {
+        & > li > a {
+          font-size: 1.4rem;
+          color: $gray3;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .menuSlider {
+      position: absolute;
+      background-color: $purple1;
+      height: 3px;
+      width: 0;
+      bottom: 15px;
+      transform: translateX(100%);
+      right: 50%;
+      transition: all 0.3s 0.1s;
+      pointer-events: none;
+      opacity: 1;
+    }
+  }
+
+  .shinhanLifeLogo {
+    width: 172px;
+    height: 30px;
+    display: inline-block;
+    background-image: url("https://www.shinhanlife.co.kr/resources/images/cdh/common/logo_sh_w.svg");
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 172px auto;
   }
 
   // sticky 와 menuOpen 부분
@@ -168,14 +172,19 @@ header {
   &.menuOpen {
     background-color: white;
 
+    .gnbArea {
+      box-shadow: 0 16px 16px rgba(0, 0, 0, 0.1);
+    }
+
     nav.topWrap .linkGroup a {
       color: $gray3;
     }
 
-    .gnbArea nav.gnbWrap .navLinkGroup {
+    .navLinkGroup {
       .menuSlider {
         opacity: 1;
-        transform: translateX(0);
+        right: 0;
+        transform: translateX(0%);
       }
 
       li {
@@ -190,8 +199,8 @@ header {
       }
     }
 
-    .gnbArea .shinhanLifeLogo {
-      background-image: url("../resources/images/logo_sh.svg");
+    .shinhanLifeLogo {
+      background-image: url("https://www.shinhanlife.co.kr/resources/images/cdh/common/logo_sh.svg");
     }
 
     .iconButton {

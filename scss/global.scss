@@ -8,6 +8,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  word-break: keep-all;
 }
 
 html {
@@ -44,8 +45,24 @@ a {
 .topWrap,
 .funWrap,
 .siberWrap,
-.contentWrap {
+.contentWrap,
+.notiWrap,
+.boxWrap,
+.companyInfo,
+.sectionList,
+.swiperBanner {
   @include contentWidth;
+}
+
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  display: none;
 }
 
 .container {
@@ -55,6 +72,29 @@ a {
 
 .blind {
   display: none;
+}
+
+.bgColor {
+  background-color: #fafafa;
+}
+
+.chevron {
+  position: relative;
+  padding-right: 2rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #666;
+    border-width: 1px 1px 0 0;
+    background-color: transparent;
+    overflow: hidden;
+    transform: translateY(-50%) rotate(45deg);
+  }
 }
 
 [class*="lineSlider"] {
