@@ -148,6 +148,9 @@ a {
       width: 100%;
       background-color: white; }
 
+.swiper-container {
+  overflow: hidden; }
+
 header {
   position: absolute;
   top: 0;
